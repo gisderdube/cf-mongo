@@ -22,10 +22,13 @@ async function handler({ fail }: HealthInput, { db, request, env }: HandlerConte
 		})
 	}
 
-	const result = await db.collection('test').insertOne({
-		date: new Date(),
-	})
-	const doc = await db.collection('test').findOne({ _id: result.insertedId })
+	const id = env.MONGODB_CONNECTOR.idFromName('mongodb-connector')
+	const stub = env.MONGODB_CONNECTOR.get(id)
+	const doc = await stub.insertTestDoc()
+	// const result = await db.collection('test').insertOne({
+	// 	date: new Date(),
+	// })
+	// const doc = await db.collection('test').findOne({ _id: result.insertedId })
 
 	return {
 		...JSON.parse(JSON.stringify(doc)),

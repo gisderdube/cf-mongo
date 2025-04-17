@@ -3,7 +3,7 @@ import { z } from 'zod'
 
 export type HandlerContext = {
 	request: Request<unknown, CfProperties<unknown>>
-	db: Db
+	db?: Db
 	env: Env
 }
 

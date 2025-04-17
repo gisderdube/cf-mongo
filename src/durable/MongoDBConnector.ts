@@ -29,7 +29,7 @@ export class MongoDBConnector extends DurableObject {
 	}
 
 	async insertTestDoc() {
-		console.log('MongoDBConnector insertTestDoc', this.uri, this.dbName)
+		console.log('MongoDBConnector insertTestDoc')
 		const db = await this.getDb()
 		const result = await db.collection('test').insertOne({
 			date: new Date(),

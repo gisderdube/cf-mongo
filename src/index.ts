@@ -3,7 +3,6 @@ import { z } from 'zod'
 import { ServerError, ValidationError } from './errors/ServerError'
 import { router } from './modules/router'
 import { RouteHandler, RouteHandlerWithSchema } from './modules/types'
-import connectDb from './utils/db'
 
 export { MongoDBConnector } from './durable/MongoDBConnector'
 
@@ -60,7 +59,9 @@ async function handleRequest({
 
 		try {
 			// Create context object
-			const { db, client: dbClient } = await connectDb({ env, ctx, request })
+			// const { db, client: dbClient } = await connectDb({ env, ctx, request })
+			const db = undefined
+			const dbClient = undefined
 			const context = { request, db, env, ctx }
 
 			// Execute the handler with validation if it has schemas
