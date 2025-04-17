@@ -82,7 +82,7 @@ async function handleRequest({
 									devMessage: 'Input validation failed',
 									data: { issues: err.issues },
 								},
-								{ dbClient, ctx }
+								{ dbClient, ctx },
 							)
 						}
 						throw err
@@ -107,7 +107,7 @@ async function handleRequest({
 									devMessage: 'Output validation failed',
 									data: { issues: err.issues },
 								},
-								{ dbClient, ctx }
+								{ dbClient, ctx },
 							)
 						}
 						throw err
@@ -183,7 +183,7 @@ async function createErrorResponse(
 		devMessage?: string
 		data?: any
 	},
-	{ dbClient, ctx }: { dbClient?: MongoClient; ctx?: ExecutionContext } = {}
+	{ dbClient, ctx }: { dbClient?: MongoClient; ctx?: ExecutionContext } = {},
 ): Promise<Response> {
 	if (dbClient) {
 		const closePromise = dbClient.close()

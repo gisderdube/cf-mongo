@@ -12,7 +12,7 @@ export class ServerError extends Error {
 			userMessage = 'Something went wrong... Please try again later or contact support.',
 			devMessage,
 			data,
-		}: { userMessage?: string; devMessage?: string; data?: any }
+		}: { userMessage?: string; devMessage?: string; data?: any },
 	) {
 		super(userMessage)
 		this.name = 'ServerError'

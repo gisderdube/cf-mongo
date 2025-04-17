@@ -9,28 +9,28 @@
 	"compatibility_date": "2025-04-15",
 	"compatibility_flags": ["nodejs_compat_v2"],
 	"observability": {
-		"enabled": true
+		"enabled": true,
 	},
 	"durable_objects": {
 		"bindings": [
 			{
 				"name": "MONGODB_CONNECTOR",
-				"class_name": "MongoDBConnector"
-			}
-		]
+				"class_name": "MongoDBConnector",
+			},
+		],
 	},
 	"migrations": [
 		{
 			"tag": "v1",
-			"new_classes": ["MongoDBConnector"]
-		}
+			"new_classes": ["MongoDBConnector"],
+		},
 	],
 	"env": {
 		"production": {
 			"vars": {
-				"MONGODB_DB": "cf-mongo"
-			}
-		}
+				"MONGODB_DB": "cf-mongo",
+			},
+		},
 	},
-	"placement": { "mode": "smart" }
+	"placement": { "mode": "smart" },
 }
