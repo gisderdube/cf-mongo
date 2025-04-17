@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "cf-mongo",
+	"name": "cf-mongo-do",
 	"main": "src/index.ts",
 	"compatibility_date": "2025-04-15",
 	"compatibility_flags": ["nodejs_compat_v2"],
@@ -28,7 +28,7 @@
 	"env": {
 		"production": {
 			"vars": {
-				"MONGODB_DB": "cf-mongo",
+				"MONGODB_DB": "cf-mongo-do",
 			},
 		},
 	},
